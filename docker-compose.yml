@@ -11,7 +11,7 @@ services:
             - ./scripts/nginx/services.conf:/etc/nginx/conf.d/default.conf:ro
             - ./scripts/nginx/cer/nginx-selfsigned.crt:/etc/ssl/esercizio/esercizio.crt:ro
             - ./scripts/nginx/cer/nginx-selfsigned.key:/etc/ssl/esercizio/esercizio.key:ro
-            - ./webapp-RGQL/build:/var/www/app:ro
+            - ./webapp-RGQL/build/:/var/www/app/:ro
         networks: 
             - esercizio-graph
         ports:
