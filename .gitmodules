@@ -1,6 +1,0 @@
-[submodule "webapp-RGQL"]
-	path = webapp-RGQL
-	url = git@github.com:Hiru93/webapp-RGQL.git
-[submodule "server-RGQL"]
-	path = server-RGQL
-	url = git@github.com:Hiru93/server-RGQL.git
