@@ -1,12 +1,19 @@
-build:
-    docker:
-      web: docker-compose
-    config:
-      BUNDLE_INSTALL_ARGS: --jobs 10 --retry=3 --without development test
-      RAILS_ENV: production
-run:
-  web: bundle exec puma -C config/puma.rb
-  worker:
-    command:
-      - bundle exec rake jobs:work
-    image: web
+version: "3.5"
+
+networks:
+    esercizio-graph:
+
+services:
+    frontend:
+        image: nginx:latest
+        restart: unless-stopped
+        volumes:
+            - ./scripts/nginx/services.conf:/etc/nginx/conf.d/default.conf:ro
+            - ./scripts/nginx/cer/nginx-selfsigned.crt:/etc/ssl/esercizio/esercizio.crt:ro
+            - ./scripts/nginx/cer/nginx-selfsigned.key:/etc/ssl/esercizio/esercizio.key:ro
+            - ./webapp-RGQL/build:/var/www/app/:ro
+        networks: 
+            - esercizio-graph
+        ports:
+            - 80:80
+            - 443:443
