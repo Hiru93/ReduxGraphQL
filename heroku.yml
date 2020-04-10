@@ -1,6 +1,6 @@
 build:
     docker:
-      web: Dockerfile
+      web: docker-compose
     config:
       BUNDLE_INSTALL_ARGS: --jobs 10 --retry=3 --without development test
       RAILS_ENV: production
