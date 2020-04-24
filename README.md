@@ -1,6 +1,6 @@
 # Repo init
 ```
-git clone --recurse-submodules -j8 git@github.com:Hiru93/ReduxGraphQL.git
+git clone --recurse-submodules git@github.com:Hiru93/ReduxGraphQL.git
 ```
 
 # Submodules update
